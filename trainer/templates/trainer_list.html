@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Trainers List</h1>
+    <table>
+        <tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>age</th>
+            <th>gender</th>
+            
+            <th>subject_name</th>
+            <th>company</th>
+            <th>job_title</th>
+           
+
+        </tr>
+        {% for trainer in trainers %}
+        <tr>
+            
+            <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+            <td>{{trainer.age}}</td>
+            <td>{{trainer.gender}}</td>
+            <td>{{trainer.subject_name}}</td>
+            <td>{{trainer.company}}</td>
+            <td>{{trainer.job_title}}</td>
+            
+        </tr>
+        {%endfor%}
+    </table>
+<style>
+    h1{
+        font-size: 28px;
+        color: purple;
+        text-align: center;
+    }
+table, td, th {  
+border: 3px solid rgb(175, 23, 162);
+text-align: left;
+}
+
+table {
+border-collapse: collapse;
+width: 100%;
+
+}
+
+th, td {
+padding: 15px;
+}
+</style>
+    
+</body>
+</html>
