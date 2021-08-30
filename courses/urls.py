@@ -8,6 +8,6 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     path("register/",register_course,name="register_course"),
-     path("register_list/",course_list,name="course_list"),
+    path("register_list/",course_list,name="course_list"),
 
 ]

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'student',
     'trainer',
     'courses',
-    'event',
+    'calender',
 ]
 
 MIDDLEWARE = [
