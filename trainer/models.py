@@ -5,7 +5,7 @@ class Trainer(models.Model):
     last_name=models.CharField(max_length=14)
     age=models.PositiveSmallIntegerField()
     nationality=models.CharField(max_length=20)
-    trainer_image=models.ImageField()
+    image=models.ImageField()
     email=models.EmailField()
     Date_of_Birth=models.DateField()
     gender_choice=((u'M',u'Male'),(u'F',U'Female'),(u'O',u'Others'))

@@ -14,25 +14,36 @@
             <th>last_name</th>
             <th>age</th>
             <th>gender</th>
-            
-            <th>subject_name</th>
+            <th>subject_name</th> 
             <th>company</th>
             <th>job_title</th>
+            <th>image</th>
+            <th>Edit</th>
+            <th>Profile</th>
+            <th>Delete</th>
            
 
         </tr>
-        {% for trainer in trainers %}
+        {%for trainers in trainers%}
         <tr>
-            
-            <td>{{trainer.first_name}}</td>
-            <td>{{trainer.last_name}}</td>
-            <td>{{trainer.age}}</td>
-            <td>{{trainer.gender}}</td>
-            <td>{{trainer.subject_name}}</td>
-            <td>{{trainer.company}}</td>
-            <td>{{trainer.job_title}}</td>
-            
-        </tr>
+        
+            <td>{{trainers.first_name}}</td>
+            <td>{{trainers.last_name}}</td>
+            <td>{{trainers.age}}</td>
+            <td>{{trainers.gender}}</td>
+            <td>{{trainers.subject_name}}</td>
+            <td>{{trainers.company}}</td>
+            <td>{{trainers.job_title}}</td>
+
+            {% if trainers.image %}
+
+            <td><img src="{{trainers.image.url}}" width="45"></td>
+            {% endif %}
+
+            <td><a href="{% url 'edit_trainer' id=trainers.id%}">Edit</a></td>
+            <td><a href="{% url 'trainer_profile' id=trainers.id%}">Profile</a></td>
+            <td><a href="{% url 'delete_trainer' id=trainers.id%}">Delete</a></td>
+    </tr>
         {%endfor%}
     </table>
 <style>

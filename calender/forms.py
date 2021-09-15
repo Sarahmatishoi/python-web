@@ -5,11 +5,11 @@ from.models import Event
 
 
 
-
 class CalenderRegistrationForm(forms.ModelForm):
     class Meta:
-        models=Event
+        model=Event
         fields='__all__'
+        
 
 def __init__(self,*args,**kwargs):
     super(CalenderRegistrationForm,self).__init__(*args,**kwargs)

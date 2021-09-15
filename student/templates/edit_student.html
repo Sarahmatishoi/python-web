@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <style>
+        h1{
+            text-align: center;
+            color:rgb(145, 44, 145);
+        }
+        body{
+            background-color:grey;
+            width: 400px;
+            height: 800px;
+            font-size: 20px;
+        }
+        form{
+            background-color: white;
+            margin-left: 200px;
+            width: 600px;
+            padding: 100px;
+            font-size: 20px;
+            border-radius: 20px;
+            margin-right: 300px;
+        }
+        input{
+           width: 100%;
+            outline: none;
+            border: 1px solid;
+            font-size: 16px;
+            padding: 8px 10px;
+            background-color:white;
+
+        }
+        button{
+            background-color: purple;
+            align-items: 50%;
+            margin-left: 40%;
+            top: 20px;
+            /* border-color: crimson; */
+            height: 40px;
+            width: 100px;
+            font-size: 18px;
+            border-radius: 30px;
+            
+            
+            
+        }
+        .hello{
+            margin-left: 15%;
+        }
+
+    </style>
+    <!-- <h1>Student Regestration Form</h1> -->
+    <form method="POST" enctype="multipart/form-data">
+        <div class="hello">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE4FYKLDyIM2PiFVFjXmDy8naSxGR91NTzDA&usqp=CAU" alt="">
+        </div>
+        <h1>Student Registration Form</h1>
+        {%csrf_token%}
+        {{form.as_p}} 
+        <button type="submit">Register</button> 
+    </form>

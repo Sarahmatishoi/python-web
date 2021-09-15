@@ -7,12 +7,91 @@
     <title>Document</title>
 </head>
 <body>
+  <h1> My Calender</h1>
 
-{'% block content %}
-{'{ calendar }}
-{'% endblock %}
-    <style>
-        .calendar {
+{% block content %}
+
+<div class="clearfix">
+	<a class="btn btn-info left" href="{'% url 'calendar' %}?{'{ prev_month }}"> Previous Month</a></button>
+	<a class="btn btn-info right" href="{'% url 'calendar' %}?{'{ next_month }}"> Next Month </a>
+</div>
+
+{{ calendar }}
+{% endblock %}
+
+
+<style>
+body {
+  font-family: "ptsans", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.info {
+    border-color: rgb(38, 141, 132);
+    color:rgb(31, 149, 153);
+  }
+  .info:hover {
+    background:palevioletred;
+    color: white;
+  }
+  .info {
+    border-color: rgb(22, 179, 171);
+    color:rgb(26, 177, 182);
+  }
+  .info:hover {
+    background:rgb(19, 138, 132);
+    color: white;
+  }
+.container {
+        margin-top: 10px;
+        background-color: white;
+        margin-left: 30%;
+        width: 500px;
+        border:3px solid purple;
+        box-shadow: 8px 8px 8px 9px rgb(179, 123, 179);
+        border-radius: 10px;
+    }
+    button{
+        background-color: purple;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        align-items: center;
+        width: 300px;
+        margin-right: 71px;
+        text-decoration: none;
+    }
+    h1
+     {padding-top: 10px;
+      color:rgb(0, 119, 128);
+      margin-left: 100px;
+      text-align: center;
+    }
+    p
+    {color: red;}
+    form{
+        padding-top: 20px;
+        padding-left: 80px;
+        padding-bottom: 20px;
+    }
+    .form-group{
+      border-color: purple;
+    }
+    #akiralogo{
+        width: 80px;
+        height:80px;
+        padding-bottom: 15px;
+        margin-left: 50px;
+    }
+ 
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clearfix {
+  margin: 15px;
+}
+.calendar {
   width: 98%;
   margin: auto;
   font-size: 13px;
@@ -48,8 +127,11 @@ ul {
 }
 
 a {
-  color: #17a2b8;
+color: #17a2b8;
+text-decoration: none;
+font-size: 20px;
 }
+
     </style>
 </body>
 </html>

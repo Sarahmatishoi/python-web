@@ -17,7 +17,10 @@
             <th>parent_name</th>
             <th>parent_contact</th>
             <th>admission_date</th>
-           
+            <th>image</th>
+            <th>Edit</th>
+            <th>Profile</th>
+            <th>Delete</th>
         
         </tr>
         {% for student in students %}
@@ -29,6 +32,13 @@
             <td>{{student.parent_name}}</td>
             <td>{{student.parent_contact}}</td>
             <td>{{student.admission_date}}</td>
+
+            {% if student.image %}
+            <td><img src="{{student.image.url}}" width="45"></td>
+            {% endif %}
+            <td> <a href="{%url 'edit_student' id=student.id%}">Edit</a></td>
+            <td> <a href="{%url 'student_profile' id=student.id%}">Profile</a></td>
+            <td> <a href="{%url 'delete_student' id=student.id%}">Delete</a></td>
         </tr>
         {%endfor%}
     </table>
