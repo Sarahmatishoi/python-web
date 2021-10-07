@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.fields import BLANK_CHOICE_DASH
+
 
 class Student(models.Model):
     first_name=models.CharField(max_length=12)
@@ -26,6 +26,11 @@ class Student(models.Model):
     languages_choice=((u'E',u'English'),(u'K',u'Kiswahili'),(u'F',u'French'))
     languages=models.CharField(max_length=15,choices=languages_choice)
 
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+    def year_of_birth(self):
+        return 2021-self.age
 
 
     
