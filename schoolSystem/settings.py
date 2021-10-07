@@ -1,3 +1,4 @@
+import dj_database_url
 import django_heroku
 """
 Django settings for schoolSystem project.
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-e(adv)783f22^0b9r-wq1&gqb=ov@%q#4*k8jib9hoiu^h@&l*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','schoolsystem-sarah.herokuapp.com']
 
 
 # Application definition
@@ -88,7 +89,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
