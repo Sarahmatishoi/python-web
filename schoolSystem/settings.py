@@ -1,5 +1,3 @@
-import dj_database_url
-import django_heroku
 """
 Django settings for schoolSystem project.
 
@@ -13,8 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import django_heroku
 from pathlib import Path
 
+from django.db import models
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-e(adv)783f22^0b9r-wq1&gqb=ov@%q#4*k8jib9hoiu^h@&l*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','schoolsystem-sarah.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -85,12 +85,15 @@ WSGI_APPLICATION = 'schoolSystem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'AkiraChix',
+        'USER': 'Sarah',
+        'PASSWORD': 'Akira',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
